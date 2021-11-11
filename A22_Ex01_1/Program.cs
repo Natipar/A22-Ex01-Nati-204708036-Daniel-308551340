@@ -12,6 +12,9 @@ namespace A22_Ex01_1
         {
 
         }
+        public int BinaryToDecimal(string BinNum)
+        {
 
+        }
     }
 }
