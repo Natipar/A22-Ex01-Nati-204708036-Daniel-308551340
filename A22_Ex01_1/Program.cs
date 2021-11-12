@@ -11,8 +11,32 @@ namespace A22_Ex01_1
     {
         public static void Main()
         {
-            //Ex01_1();
-            A22_Ex01_4.Program.Ex01_4();
+            string switch_item;
+            int converted_input;
+            do
+            {
+                System.Console.WriteLine(@"Hello User, please choose the service you'd like to use :
+1. Binary numbers
+2. Constant HourGlass
+3. Smart HourGlass
+4. String
+5. Zubin Meta
+Enter 0 to exit the menu");
+                switch_item = System.Console.ReadLine();
+                if (Int32.TryParse(switch_item, out converted_input))
+                {
+                    switch (converted_input)
+                    {
+                        case 1:
+                            Ex01_1();
+                            break;
+                        case 4:
+                            A22_Ex01_4.Program.Ex01_4();
+                            break;
+                    }
+                }
+            } while (converted_input!=0);
+            
         }
         public static void Ex01_1()
         {
