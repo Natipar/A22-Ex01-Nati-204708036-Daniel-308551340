@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using A22_Ex01_4;
 
 namespace A22_Ex01_1
 {
@@ -10,7 +11,8 @@ namespace A22_Ex01_1
     {
         public static void Main()
         {
-            Ex01_1();
+            //Ex01_1();
+            A22_Ex01_4.Program.Ex01_4();
         }
         public static void Ex01_1()
         {
