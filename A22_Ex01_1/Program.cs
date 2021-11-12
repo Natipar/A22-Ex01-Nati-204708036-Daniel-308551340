@@ -16,7 +16,7 @@ namespace A22_Ex01_1
         {
             string[] binary_array = new string[4];
             int[] decimal_array = new int[4];
-            double one_counter=0, zero_counter=0;
+            double one_counter=0, zero_counter=0, Min_num, Max_num;
             int power_counter = 0, ascending_amount = 0;
             for (int i = 0; i < binary_array.Length; i++)
             {
@@ -41,15 +41,14 @@ namespace A22_Ex01_1
             power_counter = powerOfTwoAmount(decimal_array);
             System.Console.WriteLine("There are {0} numbers that are a power of 2", power_counter);
             System.Console.WriteLine("There are {0} numbers which are in ascending order",ascending_amount);
-            //System.Console.WriteLine(one_counter +"  "+ zero_counter);
-            //System.Console.WriteLine(temp);
+            Max_num = decimal_array.Max();
+            Min_num = decimal_array.Min();
+            System.Console.WriteLine("The max number is {0}, and the min number is {1}", Max_num, Min_num);
         }
         public static bool isAscending (string decimal_num)
         {
             if (decimal_num.Length == 1)
-            {
                 return true;
-            }
             int last = int.Parse(decimal_num.Last().ToString());
             int prev = int.Parse(decimal_num[decimal_num.Length - 2].ToString());
 
