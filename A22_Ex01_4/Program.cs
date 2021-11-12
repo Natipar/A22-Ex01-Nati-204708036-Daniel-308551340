@@ -32,7 +32,29 @@ namespace A22_Ex01_4
             if (isAllLetters(s))  
                 System.Console.WriteLine("The number of uppercase letters in your word is : {0}"
                     ,UppercaseLettersCount(s));
+            if (isPalindrome(s)) System.Console.WriteLine("The string is a palindrome! cool!");
             //System.Console.WriteLine(numeric_value);
+        }
+        static bool isPalRec(string str,
+                         int s,
+                         int e)
+        {
+            if (s == e)
+                return true;
+            if ((str[s]) != (str[e]))
+                return false;
+            if (s < e + 1)
+                return isPalRec(str, s + 1,
+                                e - 1);
+            return true;
+        }
+
+        static bool isPalindrome(string str)
+        {
+            int n = str.Length;
+            if (n == 0)
+                return true;
+            return isPalRec(str, 0, n - 1);
         }
         public static int UppercaseLettersCount(string i_str)
         {
