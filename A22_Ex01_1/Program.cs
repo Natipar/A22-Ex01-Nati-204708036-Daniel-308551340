@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using A22_Ex01_4;
+using A22_Ex01_2;
+using A22_Ex01_3;
 
 namespace A22_Ex01_1
 {
@@ -29,6 +31,12 @@ Enter 0 to exit the menu");
                     {
                         case 1:
                             Ex01_1();
+                            break;
+                        case 2:
+                            A22_Ex01_2.Program.Ex01_2();
+                            break;
+                        case 3:
+                            A22_Ex01_3.Program.Ex01_3();
                             break;
                         case 4:
                             A22_Ex01_4.Program.Ex01_4();

@@ -39,6 +39,14 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\A22_Ex01_2\A22_Ex01_2.csproj">
+      <Project>{a1e6b65c-b298-4780-95fc-17f7afae7c8c}</Project>
+      <Name>A22_Ex01_2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\A22_Ex01_3\A22_Ex01_3.csproj">
+      <Project>{4000bdbf-9689-435c-b94a-5daa9bc9fe09}</Project>
+      <Name>A22_Ex01_3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\A22_Ex01_4\A22_Ex01_4.csproj">
       <Project>{628dbb19-b5a2-4ff0-85df-2126fbd7b1c5}</Project>
       <Name>A22_Ex01_4</Name>
