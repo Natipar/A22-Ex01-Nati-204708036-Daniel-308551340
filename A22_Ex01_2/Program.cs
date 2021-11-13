@@ -12,17 +12,22 @@ using System.Threading.Tasks;
 
 namespace A22_Ex01_2
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
-            HourGlass(0,5,2); // No spaces before the * on the first line, 5 stars in the line
-            System.Console.WriteLine("Done!");
+
         }
 
-        public static void HourGlass(int i_Offset, int i_StarCount, int i_Increment)
+        public static void Ex01_2(int i_Offset = 0, int i_Increment = 2, int i_StarCount = 5)
         {
-            if(i_Offset < 0 && i_Increment < 0)
+
+            if (i_StarCount % 2 == 0)
+            {
+                i_StarCount += 1;
+            }
+
+            if (i_Offset < 0 && i_Increment < 0)
             {
                 return;
             }
@@ -43,7 +48,7 @@ namespace A22_Ex01_2
                 i_Increment = -2; // So we will have odd number of starts in each line
             }
 
-            HourGlass(i_Offset + i_Increment, i_StarCount- i_Increment, i_Increment);
+            Ex01_2(i_Offset + i_Increment, i_Increment, i_StarCount - i_Increment);
         }
     }
 }
