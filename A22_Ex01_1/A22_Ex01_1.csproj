@@ -51,6 +51,10 @@
       <Project>{628dbb19-b5a2-4ff0-85df-2126fbd7b1c5}</Project>
       <Name>A22_Ex01_4</Name>
     </ProjectReference>
+    <ProjectReference Include="..\A22_Ex01_5\A22_Ex01_5.csproj">
+      <Project>{551092f3-997e-405e-8e2e-fd225efaa9cd}</Project>
+      <Name>A22_Ex01_5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

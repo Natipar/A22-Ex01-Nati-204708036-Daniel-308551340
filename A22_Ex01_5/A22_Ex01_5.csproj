@@ -35,5 +35,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\A22_Ex01_4\A22_Ex01_4.csproj">
+      <Project>{628dbb19-b5a2-4ff0-85df-2126fbd7b1c5}</Project>
+      <Name>A22_Ex01_4</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

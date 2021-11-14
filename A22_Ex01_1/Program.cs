@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using A22_Ex01_4;
 using A22_Ex01_2;
 using A22_Ex01_3;
+using A22_Ex01_5;
 
 namespace A22_Ex01_1
 {
@@ -40,6 +41,9 @@ Enter 0 to exit the menu");
                             break;
                         case 4:
                             A22_Ex01_4.Program.Ex01_4();
+                            break;
+                        case 5:
+                            A22_Ex01_5.Program.Ex05();
                             break;
                     }
                 }
