@@ -10,75 +10,123 @@ namespace A22_Ex01_4
     {
         public static void Main()
         {
-
         }
+
         public static void Ex01_4()
         {
             string s = null;
-            bool validiation_flag = true;
-            while (validiation_flag) 
-            { 
+            bool validationFlag = true;
+            while (validationFlag)
+            {
                 System.Console.WriteLine("Please enter a word contains only numbers or letters");
                 s = System.Console.ReadLine();
-                if (isInputValid(s)) validiation_flag = false;
+                if (IsInputValid(s))
+                {
+                    validationFlag = false;
+                }
             }
-            //System.Console.WriteLine(isInputValid(s));
-            int numeric_value;
-            if (Int32.TryParse(s, out numeric_value)){
-                if (numeric_value%4 == 0)
-                    System.Console.WriteLine("The number can be divided by 4");
+
+            if (int.TryParse(s, out int numericValue))
+            {
+                if (numericValue % 4 == 0)
+                {
+                    Console.WriteLine("The number can be divided by 4");
+                }
             }
-            //System.Console.WriteLine("{0}, {1}, {2}", isAllDigits(s),isAllLetters(s),isInputValid(s));
-            if (isAllLetters(s))  
-                System.Console.WriteLine("The number of uppercase letters in your word is : {0}"
-                    ,UppercaseLettersCount(s));
-            if (isPalindrome(s)) System.Console.WriteLine("The string is a palindrome! cool!");
-            //System.Console.WriteLine(numeric_value);
+
+            if (IsAllLetters(s))
+            {
+                System.Console.WriteLine(
+                    string.Format("The number of uppercase letters in your word is : {0}", UppercaseLettersCount(s)));
+            }
+
+            if (IsPalindrome(s))
+            {
+                System.Console.WriteLine("The string is a palindrome! cool!");
+            }
         }
-        static bool isPalRec(string str,
-                         int s,
-                         int e)
+
+        public static bool IsPalRec(
+            string i_Str,
+            int i_S,
+            int i_)
         {
-            if (s == e)
+            if (i_S == i_)
+            {
                 return true;
-            if ((str[s]) != (str[e]))
+            }
+
+            if (i_Str[i_S] != i_Str[i_])
+            {
                 return false;
-            if (s < e + 1)
-                return isPalRec(str, s + 1,
-                                e - 1);
+            }
+
+            if (i_S < i_ + 1)
+            {
+                return IsPalRec(i_Str, i_S + 1, i_ - 1);
+            }
+
             return true;
         }
 
-        static bool isPalindrome(string str)
+        public static bool IsPalindrome(string i_Str)
         {
-            int n = str.Length;
-            if (n == 0)
-                return true;
-            return isPalRec(str, 0, n - 1);
+            int n = i_Str.Length;
+            return n == 0 || IsPalRec(i_Str, 0, n - 1);
         }
-        public static int UppercaseLettersCount(string i_str)
+
+        public static int UppercaseLettersCount(string i_Str)
         {
-            int letters_count = 0;
-            for (int i = 0; i < i_str.Length; i++)
+            int lettersCount = 0;
+            foreach (char c in i_Str)
             {
-                if (char.IsUpper(i_str[i])) letters_count++;
+                if (char.IsUpper(c))
+                {
+                    lettersCount++;
+                }
             }
-            return letters_count;
+
+            return lettersCount;
         }
-        public static bool isInputValid(string i_s)
+
+        public static bool IsInputValid(string i_S)
         {
-            if (i_s.Length == 0) return false;
-            if (!isAllDigits(i_s) & !isAllLetters(i_s)) return false;
+            if (i_S.Length == 0)
+            {
+                return false;
+            }
+
+            if (!IsAllDigits(i_S) & !IsAllLetters(i_S))
+            {
+                return false;
+            }
+
             return true;
         }
-        public static bool isAllLetters(string i_s)
+
+        public static bool IsAllLetters(string i_S)
         {
-            foreach (char c in i_s) { if (!Char.IsLetter(c)) return false; }
+            foreach (char c in i_S)
+            {
+                if (!char.IsLetter(c))
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
-        public static bool isAllDigits(string i_s)
+
+        public static bool IsAllDigits(string i_S)
         {
-            foreach (char c in i_s) { if (!Char.IsDigit(c)) return false; }
+            foreach (char c in i_S)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
     }

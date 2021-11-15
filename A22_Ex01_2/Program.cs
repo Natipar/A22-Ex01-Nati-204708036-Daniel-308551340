@@ -4,24 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 // Offset = # of spaces before starts
 // StarCount = Amount of stars on the top row
 // Increment = Change the amount of spaces and stars
-
-
 namespace A22_Ex01_2
 {
     public class Program
     {
         public static void Main()
         {
-
         }
 
         public static void Ex01_2(int i_Offset = 0, int i_Increment = 2, int i_StarCount = 5)
         {
-
             if (i_StarCount % 2 == 0)
             {
                 i_StarCount += 1;
@@ -32,16 +27,19 @@ namespace A22_Ex01_2
                 return;
             }
 
-            for(int i = 0; i < i_Offset; i+=2) // Amount of spaces before the *
+            // Amount of spaces before the *
+            for (int i = 0; i < i_Offset; i += 2)
             {
                 System.Console.Write(" ");
             }
 
-            for(int i = 0; i < i_StarCount; i++) // Amount of stars
+            // Amount of stars
+            for (int i = 0; i < i_StarCount; i++)
             {
                 System.Console.Write("*");
             }
-            System.Console.WriteLine(""); // Go down a line - if we want spaces between the lines, add \n
+
+            System.Console.WriteLine(string.Empty); // Go down a line - if we want spaces between the lines, add \n
 
             if (i_StarCount == 1)
             {
