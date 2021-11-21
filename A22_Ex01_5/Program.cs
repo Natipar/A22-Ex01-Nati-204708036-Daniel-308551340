@@ -20,7 +20,7 @@ namespace A22_Ex01_5
             string inputNumber = System.Console.ReadLine();
             while (!IsInputValid(inputNumber))
             {
-                System.Console.WriteLine("Sorry, the number you've enter doesn't meet the requirements.try again : ");
+                System.Console.WriteLine("Sorry, the number you've enter doesn't meet the requirements. Try again : ");
                 inputNumber = Console.ReadLine();
             }
 
@@ -33,7 +33,6 @@ There are {3} insignificant digits compared to the unity digit.",
                     MaxDigitInNumber(inputNumber), AverageOfDigits(inputNumber), CountDivisionsByThree(inputNumber),
                     CountSmallerDigits(inputNumber));
 
-            //msg = "\n" + msg;
             Console.WriteLine(msg);
         }
 

@@ -19,11 +19,16 @@ namespace A22_Ex01_4
             bool validationFlag = true;
             while (validationFlag)
             {
-                Console.WriteLine("Please enter a word contains only numbers or letters");
+                Console.WriteLine("Please enter a word that contains only numbers or letters:");
                 s = Console.ReadLine();
                 if (IsInputValid(s))
                 {
                     validationFlag = false;
+                }
+
+                else
+                {
+                   Console.WriteLine("Input is invalid."); 
                 }
             }
 
