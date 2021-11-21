@@ -43,7 +43,7 @@ Enter 0 to exit the menu");
                             A22_Ex01_4.Program.Ex01_4();
                             break;
                         case 5:
-                            A22_Ex01_5.Program.Ex05();
+                            A22_Ex01_5.Program.Ex01_5();
                             break;
                     }
                 }

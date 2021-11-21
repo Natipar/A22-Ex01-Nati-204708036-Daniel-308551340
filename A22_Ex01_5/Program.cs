@@ -14,7 +14,7 @@ namespace A22_Ex01_5
                 
         }
 
-        public static void Ex05()
+        public static void Ex01_5()
         {
             string input_item;
             System.Console.WriteLine("please enter a number with 7 digits : ");
