@@ -10,74 +10,87 @@ namespace A22_Ex01_5
     public class Program
     {
         public static void Main()
-        {   
-                
+        {
         }
 
         public static void Ex01_5()
         {
-            string input_item;
             System.Console.WriteLine("please enter a number with 7 digits : ");
-            input_item = System.Console.ReadLine();
-            while (!isInputValid(input_item))
+            string inputItem = System.Console.ReadLine();
+            while (!IsInputValid(inputItem))
             {
-                System.Console.WriteLine("Sorry, the number you've enter doesnt meet the requirements.try again : ");
-                input_item = Console.ReadLine();
+                System.Console.WriteLine("Sorry, the number you've enter doesn't meet the requirements.try again : ");
+                inputItem = Console.ReadLine();
             }
-            System.Console.WriteLine(isInputValid(input_item));
-            System.Console.WriteLine("The max value digit in the number is : {0}",maxDigitInNumber(input_item));
-            System.Console.WriteLine("The average of the digits value is : {0}", averageOfDigits(input_item));
-            System.Console.WriteLine("{0} digits in your number can be divided by 3",countDivisionsByThree(input_item));
-            System.Console.WriteLine("{0} digits are smaller than the unity digit", countSmallerDigits(input_item));
+
+            System.Console.WriteLine(IsInputValid(inputItem));
+            System.Console.WriteLine("The max value digit in the number is : {0}", MaxDigitInNumber(inputItem));
+            System.Console.WriteLine("The average of the digits value is : {0}", AverageOfDigits(inputItem));
+            System.Console.WriteLine("{0} digits in your number can be divided by 3", CountDivisionsByThree(inputItem));
+            System.Console.WriteLine("{0} digits are smaller than the unity digit", CountSmallerDigits(inputItem));
         }
 
-        public static int countSmallerDigits(string i_str)
+        public static int CountSmallerDigits(string i_Str)
         {
             int biggerDigitsCounter = 0;
-            char firstDigit = i_str[0];
-            foreach (char c in i_str)
+            char firstDigit = i_Str[0];
+            foreach (char c in i_Str)
             {
-                if (c < firstDigit) biggerDigitsCounter++;
+                if (c < firstDigit)
+                {
+                    biggerDigitsCounter++;
+                }
             }
 
             return biggerDigitsCounter;
         }
-        public static int countDivisionsByThree(string i_str)
+
+        public static int CountDivisionsByThree(string i_Str)
         {
-            int divisons_counter = 0, currentDigit;
-            foreach (char c in i_str)
+            int divisionsCounter = 0;
+            foreach (char c in i_Str)
             {
-                currentDigit = c - '0';
-                if (currentDigit % 3 == 0) divisons_counter++;
+                int currentDigit = c - '0';
+                if (currentDigit % 3 == 0)
+                {
+                    divisionsCounter++;
+                }
             }
 
-            return divisons_counter;
-
+            return divisionsCounter;
         }
-        public static int maxDigitInNumber(string i_str)
-        {   
-            int max = i_str.Max();
+
+        public static int MaxDigitInNumber(string i_Str)
+        {
+            int max = i_Str.Max();
             return max - '0';
         }
 
-        public static double averageOfDigits(string i_str)
+        public static double AverageOfDigits(string i_Str)
         {
-            int currentDigit = 0;
             double average = 0;
-            foreach (char c in i_str)
+            foreach (char c in i_Str)
             {
-                currentDigit = c - '0';
+                int currentDigit = c - '0';
                 average += currentDigit;
             }
 
-            average = average / i_str.Length;
+            average /= i_Str.Length;
             return average;
         }
-        public static bool isInputValid(string i_str)
+
+        public static bool IsInputValid(string i_Str)
         {
-            if (i_str.Length != 7) return false;
-            if (!(A22_Ex01_4.Program.isAllDigits(i_str))) return false;
-            //if (i_str[0] != 0) return false;
+            if (i_Str.Length != 7)
+            {
+                return false;
+            }
+
+            if (!A22_Ex01_4.Program.IsAllDigits(i_Str))
+            {
+                return false;
+            }
+
             return true;
         }
     }
