@@ -14,40 +14,7 @@ namespace A22_Ex01_1
     {
         public static void Main()
         {
-            string switchItem;
-            int convertedInput;
-            do
-            {
-                System.Console.WriteLine(@"Hello User, please choose the service you'd like to use :
-1. Binary numbers
-2. Constant HourGlass
-3. Smart HourGlass
-4. String
-5. Zubin Meta
-Enter 0 to exit the menu");
-                switchItem = System.Console.ReadLine();
-                if (Int32.TryParse(switchItem, out convertedInput))
-                {
-                    switch (convertedInput)
-                    {
-                        case 1:
-                            Ex01_1();
-                            break;
-                        case 2:
-                            A22_Ex01_2.Program.Ex01_2();
-                            break;
-                        case 3:
-                            A22_Ex01_3.Program.Ex01_3();
-                            break;
-                        case 4:
-                            A22_Ex01_4.Program.Ex01_4();
-                            break;
-                        case 5:
-                            A22_Ex01_5.Program.Ex01_5();
-                            break;
-                    }
-                }
-            } while (convertedInput != 0);
+            Ex01_1();
         }
 
         public static void Ex01_1()
@@ -57,12 +24,12 @@ Enter 0 to exit the menu");
 
             for (int i = 0; i < binaryArray.Length; i++)
             {
-                System.Console.WriteLine("Hello, please enter 1 binary number, 8 bit sized");
+                Console.WriteLine("Hello, please enter 1 binary number, 8 bit sized");
                 binaryArray[i] = System.Console.ReadLine();
                 while (!IsInputValid(binaryArray[i]))
                 {
-                    System.Console.WriteLine("Binary number isn't valid, please enter a valid one: ");
-                    binaryArray[i] = System.Console.ReadLine();
+                    Console.WriteLine("Binary number isn't valid, please enter a valid one: ");
+                    binaryArray[i] = Console.ReadLine();
                 }
             }
 
@@ -70,24 +37,29 @@ Enter 0 to exit the menu");
             double oneCounter = averageNumberOfOnes(binaryArray);
             int[] decimalArray = BinaryToDecimal(binaryArray);
 
-            System.Console.Write("The numbers in decimal are :");
+            Console.Write("The numbers in decimal are :");
             foreach (int number in decimalArray)
             {
-                System.Console.Write(number + ", ");
+                Console.Write(number + ", ");
                 if (IsAscending(number.ToString()))
                 {
                     ascendingAmount++;
                 }
             }
 
-            System.Console.WriteLine("\nThe average number of zeros is : {0} and the average number of ones is : {1}", zeroCounter, oneCounter);
             int powerCounter = PowerOfTwoAmount(decimalArray);
-
-            System.Console.WriteLine("There are {0} numbers that are a power of 2", powerCounter);
-            System.Console.WriteLine("There are {0} numbers which are in ascending order", ascendingAmount);
             double maxNum = decimalArray.Max();
             double minNum = decimalArray.Min();
-            System.Console.WriteLine("The max number is {0}, and the min number is {1}", maxNum, minNum);
+            string msg = 
+                string.Format(
+@"The average number of zeros is : {0} and the average number of ones is : {1}.
+There are {2} numbers that are a power of 2
+There are {3} numbers which are in ascending order
+The max number is {4}, and the min number is {5}",
+zeroCounter, oneCounter, powerCounter, ascendingAmount, maxNum, minNum);
+
+            msg = "\n" + msg;
+            Console.WriteLine(msg);
         }
 
         public static bool IsAscending(string i_DecimalNum)
@@ -141,14 +113,18 @@ Enter 0 to exit the menu");
         public static double AverageNumberOfZeros(string[] i_BinaryNumbers)
         {
             double zeroCounter = 0;
+
+            StringBuilder binaryCombined = new StringBuilder(i_BinaryNumbers.Length * 8); // multiply by 8 bits
             foreach (string number in i_BinaryNumbers)
             {
-                foreach (char binaryNumberChar in number)
+                binaryCombined.Append(number);
+            }
+
+            for(int i =0; i<binaryCombined.Length;i++)
+            {
+                if(binaryCombined[i] == '0')
                 {
-                    if (binaryNumberChar == '0')
-                    {
-                        zeroCounter++;
-                    }
+                    zeroCounter++;
                 }
             }
 

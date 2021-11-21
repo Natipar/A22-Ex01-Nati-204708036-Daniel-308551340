@@ -13,6 +13,7 @@ namespace A22_Ex01_2
     {
         public static void Main()
         {
+            Ex01_2();
         }
 
         public static void Ex01_2(int i_Offset = 0, int i_Increment = 2, int i_StarCount = 5)
@@ -30,16 +31,16 @@ namespace A22_Ex01_2
             // Amount of spaces before the *
             for (int i = 0; i < i_Offset; i += 2)
             {
-                System.Console.Write(" ");
+                Console.Write(" ");
             }
 
             // Amount of stars
             for (int i = 0; i < i_StarCount; i++)
             {
-                System.Console.Write("*");
+                Console.Write("*");
             }
 
-            System.Console.WriteLine(string.Empty); // Go down a line - if we want spaces between the lines, add \n
+            Console.WriteLine(string.Empty); // Go down a line - if we want spaces between the lines, add \n
 
             if (i_StarCount == 1)
             {

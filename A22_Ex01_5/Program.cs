@@ -11,23 +11,30 @@ namespace A22_Ex01_5
     {
         public static void Main()
         {
+            Ex01_5();
         }
 
         public static void Ex01_5()
         {
-            System.Console.WriteLine("please enter a number with 7 digits : ");
-            string inputItem = System.Console.ReadLine();
-            while (!IsInputValid(inputItem))
+            Console.WriteLine("Please enter a number with 7 digits : ");
+            string inputNumber = System.Console.ReadLine();
+            while (!IsInputValid(inputNumber))
             {
                 System.Console.WriteLine("Sorry, the number you've enter doesn't meet the requirements.try again : ");
-                inputItem = Console.ReadLine();
+                inputNumber = Console.ReadLine();
             }
 
-            System.Console.WriteLine(IsInputValid(inputItem));
-            System.Console.WriteLine("The max value digit in the number is : {0}", MaxDigitInNumber(inputItem));
-            System.Console.WriteLine("The average of the digits value is : {0}", AverageOfDigits(inputItem));
-            System.Console.WriteLine("{0} digits in your number can be divided by 3", CountDivisionsByThree(inputItem));
-            System.Console.WriteLine("{0} digits are smaller than the unity digit", CountSmallerDigits(inputItem));
+            string msg =
+                string.Format(
+@"The digit with the highest value in the number is : {0}.
+The average of the digits in the number is : {1}.
+{2} digits in your number can be divided by 3.
+There are {3} insignificant digits compared to the unity digit.",
+                    MaxDigitInNumber(inputNumber), AverageOfDigits(inputNumber), CountDivisionsByThree(inputNumber),
+                    CountSmallerDigits(inputNumber));
+
+            //msg = "\n" + msg;
+            Console.WriteLine(msg);
         }
 
         public static int CountSmallerDigits(string i_Str)

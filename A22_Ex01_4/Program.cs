@@ -10,6 +10,7 @@ namespace A22_Ex01_4
     {
         public static void Main()
         {
+            Ex01_4();
         }
 
         public static void Ex01_4()
@@ -18,8 +19,8 @@ namespace A22_Ex01_4
             bool validationFlag = true;
             while (validationFlag)
             {
-                System.Console.WriteLine("Please enter a word contains only numbers or letters");
-                s = System.Console.ReadLine();
+                Console.WriteLine("Please enter a word contains only numbers or letters");
+                s = Console.ReadLine();
                 if (IsInputValid(s))
                 {
                     validationFlag = false;
@@ -36,13 +37,12 @@ namespace A22_Ex01_4
 
             if (IsAllLetters(s))
             {
-                System.Console.WriteLine(
-                    string.Format("The number of uppercase letters in your word is : {0}", UppercaseLettersCount(s)));
+                Console.WriteLine("The number of uppercase letters in your word is : {0}", UppercaseLettersCount(s));
             }
 
             if (IsPalindrome(s))
             {
-                System.Console.WriteLine("The string is a palindrome! cool!");
+                Console.WriteLine("The string is a palindrome! cool!");
             }
         }
 
