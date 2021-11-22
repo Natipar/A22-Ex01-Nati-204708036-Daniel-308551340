@@ -34,7 +34,7 @@ namespace A22_Ex01_1
             }
 
             double zeroCounter = AverageNumberOfZeros(binaryArray);
-            double oneCounter = averageNumberOfOnes(binaryArray);
+            double oneCounter = AverageNumberOfOnes(binaryArray);
             int[] decimalArray = BinaryToDecimal(binaryArray);
 
             Console.Write("The numbers in decimal are :");
@@ -50,13 +50,11 @@ namespace A22_Ex01_1
             int powerCounter = PowerOfTwoAmount(decimalArray);
             double maxNum = decimalArray.Max();
             double minNum = decimalArray.Min();
-            string msg = 
-                string.Format(
-@"The average number of zeros is : {0} and the average number of ones is : {1}.
-There are {2} numbers that are a power of 2
-There are {3} numbers which are in ascending order
-The max number is {4}, and the min number is {5}",
-zeroCounter, oneCounter, powerCounter, ascendingAmount, maxNum, minNum);
+            string msg =
+                $@"The average number of zeros is : {zeroCounter} and the average number of ones is : {oneCounter}.
+There are {powerCounter} numbers that are a power of 2
+There are {ascendingAmount} numbers which are in ascending order
+The max number is {maxNum}, and the min number is {minNum}";
 
             msg = "\n" + msg;
             Console.WriteLine(msg);
@@ -120,7 +118,7 @@ zeroCounter, oneCounter, powerCounter, ascendingAmount, maxNum, minNum);
                 binaryCombined.Append(number);
             }
 
-            for(int i =0; i<binaryCombined.Length;i++)
+            for(int i = 0; i < binaryCombined.Length ;i++)
             {
                 if(binaryCombined[i] == '0')
                 {
@@ -131,7 +129,7 @@ zeroCounter, oneCounter, powerCounter, ascendingAmount, maxNum, minNum);
             return zeroCounter / i_BinaryNumbers.Length;
         }
 
-        public static double averageNumberOfOnes(string[] i_BinaryNumbers)
+        public static double AverageNumberOfOnes(string[] i_BinaryNumbers)
         {
             double oneCounter = 0;
             foreach (string number in i_BinaryNumbers)
