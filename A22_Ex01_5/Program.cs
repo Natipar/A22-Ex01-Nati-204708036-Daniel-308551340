@@ -38,17 +38,17 @@ There are {3} insignificant digits compared to the unity digit.",
 
         public static int CountSmallerDigits(string i_Str)
         {
-            int biggerDigitsCounter = 0;
-            char firstDigit = i_Str[0];
+            int smallerDigitsCounter = 0;
+            char unityDigit = i_Str[i_Str.Length - 1];
             foreach (char c in i_Str)
             {
-                if (c < firstDigit)
+                if (c < unityDigit)
                 {
-                    biggerDigitsCounter++;
+                    smallerDigitsCounter++;
                 }
             }
 
-            return biggerDigitsCounter;
+            return smallerDigitsCounter;
         }
 
         public static int CountDivisionsByThree(string i_Str)
