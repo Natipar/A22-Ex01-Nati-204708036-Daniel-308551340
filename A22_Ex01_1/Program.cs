@@ -132,14 +132,17 @@ The max number is {maxNum}, and the min number is {minNum}";
         public static double AverageNumberOfOnes(string[] i_BinaryNumbers)
         {
             double oneCounter = 0;
+            StringBuilder binaryCombined = new StringBuilder(i_BinaryNumbers.Length * 8); // multiply by 8 bits
             foreach (string number in i_BinaryNumbers)
             {
-                foreach (char binaryNumberChar in number)
+                binaryCombined.Append(number);
+            }
+
+            for (int i = 0; i < binaryCombined.Length; i++)
+            {
+                if (binaryCombined[i] == '0')
                 {
-                    if (binaryNumberChar == '1')
-                    {
-                        oneCounter++;
-                    }
+                    oneCounter++;
                 }
             }
 
